@@ -1,29 +1,34 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
-import './Login.css';
+import './Login.css'; // Reusing the aesthetic login styles
 
-const Login = () => {
+const Register = () => {
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const { login } = useAuth();
     const navigate = useNavigate();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         setError('');
 
-        // Get registered users from local storage
+        // Get existing users
         const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers') || '[]');
-        const user = registeredUsers.find((u: any) => u.email === email && u.password === password);
 
-        if (user) {
-            login(email); // Update context state
-            navigate('/account'); // Redirect to account/profile
-        } else {
-            setError('Invalid email or password. Please try again.');
+        // Check if email already exists
+        if (registeredUsers.some((u: any) => u.email === email)) {
+            setError('Email is already registered. Please login.');
+            return;
         }
+
+        // Register new user
+        const newUser = { name, email, password };
+        localStorage.setItem('registeredUsers', JSON.stringify([...registeredUsers, newUser]));
+
+        // Redirect to login
+        alert('Registration successful! Please log in.');
+        navigate('/login');
     };
 
     return (
@@ -32,11 +37,11 @@ const Login = () => {
                 {/* Left Side - Visual */}
                 <div className="login-visual">
                     <div className="visual-content">
-                        <h2>Knowledge is Power.</h2>
-                        <p>Join millions of readers who rely on NewsWorld for unbiased, in-depth reporting.</p>
+                        <h2>Join the Community.</h2>
+                        <p>Create an account to personalize your news feed and engage with top stories.</p>
                         <div className="testimonial">
-                            <p>"The only news source I trust implicitly."</p>
-                            <span>- Sarah Mitchell, Reader since 2021</span>
+                            <p>"NewsWorld has changed how I consume information daily."</p>
+                            <span>- David Chen, Reader since 2022</span>
                         </div>
                     </div>
                     <div className="visual-overlay"></div>
@@ -45,12 +50,25 @@ const Login = () => {
                 {/* Right Side - Form */}
                 <div className="login-form-wrapper">
                     <div className="form-header">
-                        <h1>Welcome Back</h1>
-                        <p>Please enter your details to sign in.</p>
+                        <h1>Create Account</h1>
+                        <p>Enter your details to register.</p>
                     </div>
 
                     <form className="login-form" onSubmit={handleSubmit}>
                         {error && <div style={{ color: 'red', marginBottom: '1rem' }}>{error}</div>}
+
+                        <div className="form-group">
+                            <label htmlFor="name">Full Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="John Doe"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                required
+                            />
+                        </div>
+
                         <div className="form-group">
                             <label htmlFor="email">Email Address</label>
                             <input
@@ -75,15 +93,7 @@ const Login = () => {
                             />
                         </div>
 
-                        <div className="form-actions">
-                            <div className="remember-me">
-                                <input type="checkbox" id="remember" />
-                                <label htmlFor="remember">Remember me</label>
-                            </div>
-                            <Link to="#" className="forgot-password">Forgot password?</Link>
-                        </div>
-
-                        <button type="submit" className="login-btn">Sign In</button>
+                        <button type="submit" className="login-btn">Register</button>
 
                         <div className="divider">
                             <span>or continue with</span>
@@ -102,7 +112,7 @@ const Login = () => {
                     </form>
 
                     <div className="form-footer">
-                        <p>Don't have an account? <Link to="/register">Register now</Link></p>
+                        <p>Already have an account? <Link to="/login">Sign in</Link></p>
                     </div>
                 </div>
             </div>
@@ -110,4 +120,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

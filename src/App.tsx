@@ -28,64 +28,70 @@ import ViratKohli from './pages/Players/ViratKohli';
 import CricketPage from './pages/Sports/CricketPage';
 import './App.css';
 
+import { AuthProvider } from './context/AuthContext';
+import Register from './pages/Auth/Register';
+
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Navigate to="/home" replace />} />
-        <Route path="home" element={<Home />} />
-        <Route path="trending" element={<Trending />} />
-        <Route path="about" element={<About />} />
-        <Route path="politics" element={<Politics />} />
-        <Route path="technology" element={<Technology />} />
-        <Route path="science" element={<Science />} />
-        <Route path="economy" element={<Economy />} />
-        <Route path="health" element={<Health />} />
-        <Route path="culture" element={<Culture />} />
-        <Route path="history" element={<History />} />
-        <Route path="geography" element={<Geography />} />
-        <Route path="writers-corner" element={<WritersCorner />} />
-        <Route path="forum" element={<Forum />} />
-        <Route path="help-center" element={<HelpCenter />} />
-        <Route path="trending/ai" element={<AI />} />
-        <Route path="trending/climate-change" element={<ClimateChange />} />
-        <Route path="trending/space-exploration" element={<SpaceExploration />} />
-        <Route path="trending/quantum-computing" element={<QuantumComputing />} />
-        <Route path="trending/:slug" element={<TrendingDetail />} />
+    <AuthProvider>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Navigate to="/home" replace />} />
+          <Route path="home" element={<Home />} />
+          <Route path="trending" element={<Trending />} />
+          <Route path="about" element={<About />} />
+          <Route path="politics" element={<Politics />} />
+          <Route path="technology" element={<Technology />} />
+          <Route path="science" element={<Science />} />
+          <Route path="economy" element={<Economy />} />
+          <Route path="health" element={<Health />} />
+          <Route path="culture" element={<Culture />} />
+          <Route path="history" element={<History />} />
+          <Route path="geography" element={<Geography />} />
+          <Route path="writers-corner" element={<WritersCorner />} />
+          <Route path="forum" element={<Forum />} />
+          <Route path="help-center" element={<HelpCenter />} />
+          <Route path="trending/ai" element={<AI />} />
+          <Route path="trending/climate-change" element={<ClimateChange />} />
+          <Route path="trending/space-exploration" element={<SpaceExploration />} />
+          <Route path="trending/quantum-computing" element={<QuantumComputing />} />
+          <Route path="trending/:slug" element={<TrendingDetail />} />
 
-        {/* Auth & User */}
-        <Route path="login" element={<Login />} />
-        <Route path="account" element={<Account />} />
-        <Route path="search" element={<SearchPage />} />
+          {/* Auth & User */}
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="account" element={<Account />} />
+          <Route path="search" element={<SearchPage />} />
 
-        {/* Specific Topics */}
-        <Route path="topic/virat-kohli" element={<ViratKohli />} />
-        <Route path="topic/cricket" element={<CricketPage />} />
+          {/* Specific Topics */}
+          <Route path="topic/virat-kohli" element={<ViratKohli />} />
+          <Route path="topic/cricket" element={<CricketPage />} />
 
-        {/* Dynamic Topics and Categories */}
-        <Route path="topic/:slug" element={<TopicPage />} />
+          {/* Dynamic Topics and Categories */}
+          <Route path="topic/:slug" element={<TopicPage />} />
 
-        {/* Main SubHeader Categories mapping to TopicPage */}
-        <Route path="world" element={<TopicPage />} />
-        <Route path="us" element={<TopicPage />} />
-        <Route path="ny" element={<TopicPage />} />
-        <Route path="california" element={<TopicPage />} />
-        <Route path="business" element={<TopicPage />} /> {/* Reuse TopicPage or Economy */}
-        <Route path="sports" element={<TopicPage />} />
-        <Route path="entertainment" element={<TopicPage />} />
-        <Route path="style" element={<TopicPage />} />
-        <Route path="travel" element={<TopicPage />} />
-        <Route path="food" element={<TopicPage />} />
-        <Route path="opinions" element={<TopicPage />} />
-        <Route path="audio" element={<TopicPage />} />
-        <Route path="games" element={<TopicPage />} />
-        <Route path="cooking" element={<TopicPage />} />
-        <Route path="wirecutter" element={<TopicPage />} />
-        <Route path="the-athletic" element={<TopicPage />} />
-        <Route path="jobs" element={<TopicPage />} />
-        <Route path="real-estate" element={<TopicPage />} />
-      </Route>
-    </Routes>
+          {/* Main SubHeader Categories mapping to TopicPage */}
+          <Route path="world" element={<TopicPage />} />
+          <Route path="us" element={<TopicPage />} />
+          <Route path="ny" element={<TopicPage />} />
+          <Route path="california" element={<TopicPage />} />
+          <Route path="business" element={<TopicPage />} /> {/* Reuse TopicPage or Economy */}
+          <Route path="sports" element={<TopicPage />} />
+          <Route path="entertainment" element={<TopicPage />} />
+          <Route path="style" element={<TopicPage />} />
+          <Route path="travel" element={<TopicPage />} />
+          <Route path="food" element={<TopicPage />} />
+          <Route path="opinions" element={<TopicPage />} />
+          <Route path="audio" element={<TopicPage />} />
+          <Route path="games" element={<TopicPage />} />
+          <Route path="cooking" element={<TopicPage />} />
+          <Route path="wirecutter" element={<TopicPage />} />
+          <Route path="the-athletic" element={<TopicPage />} />
+          <Route path="jobs" element={<TopicPage />} />
+          <Route path="real-estate" element={<TopicPage />} />
+        </Route>
+      </Routes>
+    </AuthProvider>
   );
 }
 
