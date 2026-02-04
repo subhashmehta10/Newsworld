@@ -213,7 +213,7 @@
     }
 
     .mobile-only {
-        display: flex;
+        display: flex !important;
         /* Or block/inline-block as needed */
     }
 }
