@@ -1,0 +1,117 @@
+.article-view {
+    padding: 40px 60px;
+    background-color: #ffffff;
+}
+
+.help-search-box {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    padding: 60px;
+    border-radius: 16px;
+    color: white;
+    text-align: center;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.help-search-box h2 {
+    margin: 0 0 24px 0;
+    font-size: 2rem;
+    font-family: var(--font-sans);
+    font-weight: 700;
+}
+
+.search-wrapper {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 8px;
+    border-radius: 30px;
+}
+
+.search-wrapper input {
+    flex: 1;
+    border: none;
+    padding: 12px 20px;
+    outline: none;
+    font-size: 1rem;
+    border-radius: 30px 0 0 30px;
+}
+
+.search-wrapper button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.search-wrapper button:hover {
+    background: var(--primary-hover);
+}
+
+.help-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-bottom: 3rem;
+}
+
+.help-category {
+    padding: 24px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.help-category h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+.help-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.help-category li {
+    padding: 8px 0;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.1s;
+}
+
+.help-category li:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.faq-item {
+    margin-bottom: 24px;
+}
+
+.faq-item h4 {
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+.faq-item p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .help-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .help-search-box {
+        padding: 30px;
+    }
+}

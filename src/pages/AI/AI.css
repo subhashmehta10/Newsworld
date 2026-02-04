@@ -1,0 +1,155 @@
+.article-view {
+    padding: 40px 60px;
+    background-color: #ffffff;
+}
+
+.article-header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.article-title {
+    font-family: var(--font-serif);
+    font-size: 2.75rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.article-meta {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+.article-content-wrapper {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.article-body {
+    flex: 1;
+    max-width: 850px;
+}
+
+.lead-paragraph {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.toc {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 20px 0 40px 0;
+    min-width: 260px;
+}
+
+.toc-header {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.toc ul {
+    list-style: none;
+    padding: 0;
+}
+
+.toc ul li {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.toc ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.toc ul li a:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.35rem;
+    margin-top: 1.5rem;
+}
+
+p {
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    color: #334155;
+}
+
+.infobox {
+    width: 330px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.infobox-header {
+    background: #f1f5f9;
+    padding: 12px;
+    text-align: center;
+    font-weight: 700;
+    font-family: var(--font-serif);
+    border-bottom: 1px solid #cbd5e1;
+}
+
+.infobox-image {
+    padding: 16px;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.infobox-data {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.infobox-data th,
+.infobox-data td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 13px;
+    text-align: left;
+}
+
+.infobox-data th {
+    background: #f8fafc;
+    color: var(--text-secondary);
+    width: 110px;
+}
+
+@media (max-width: 1200px) {
+    .article-content-wrapper {
+        flex-direction: column-reverse;
+    }
+
+    .infobox {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .article-view {
+        padding: 20px;
+    }
+}

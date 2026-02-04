@@ -1,0 +1,158 @@
+.trending-detail-page {
+    /* min-height: 100vh; */
+    background-color: #f8fafc;
+    padding-bottom: 4rem;
+}
+
+.trending-hero {
+    padding: 6rem 2rem 4rem;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.trending-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.trending-category {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(5px);
+}
+
+.trending-hero h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.trending-meta {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.trending-container {
+    max-width: 1200px;
+    margin: -3rem auto 0;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    position: relative;
+    z-index: 10;
+}
+
+.trending-article {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.article-content {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #334155;
+}
+
+.article-content h3 {
+    font-size: 1.8rem;
+    color: #0f172a;
+    margin: 2.5rem 0 1rem;
+}
+
+.article-content p {
+    margin-bottom: 1.5rem;
+}
+
+.trending-sidebar {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+    position: sticky;
+    top: 2rem;
+}
+
+.trending-sidebar h3 {
+    font-size: 1.4rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    color: #0f172a;
+}
+
+.trending-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.trending-sidebar li {
+    margin-bottom: 1rem;
+}
+
+.trending-sidebar a {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 500;
+    transition: color 0.2s;
+    display: block;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.trending-sidebar a:hover {
+    color: #2563eb;
+    padding-left: 5px;
+}
+
+.trending-not-found {
+    text-align: center;
+    padding: 5rem;
+}
+
+.trending-not-found h2 {
+    font-size: 2rem;
+    color: #ef4444;
+    margin-bottom: 1rem;
+}
+
+.back-home-btn {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.back-home-btn:hover {
+    background: #1d4ed8;
+}
+
+@media (max-width: 768px) {
+    .trending-container {
+        grid-template-columns: 1fr;
+    }
+
+    .trending-hero h1 {
+        font-size: 2rem;
+    }
+}
